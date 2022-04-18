@@ -3,6 +3,8 @@
 
 PWD=`pwd`
 ME=`whoami`
+
+cat > bluos-scrobbler.service << EOF
 FILE="[Unit]
 Description=BluOS Scrobbler
 After=multi-user.target
@@ -18,15 +20,14 @@ StandardError=journal+console
 
 [Install]
 WantedBy=multi-user.target
-"
-
-echo $FILE > bluos-scrobbler.service
-exit 0
+EOF
 
 sudo cp bluos-scrobbler.service /etc/systemd/system/
 sudo systemctl daemon-reload
 sudo systemctl enable bluos-scrobbler.service
 sudo systemctl restart bluos-scrobbler.service
+
+rm bluos-scrobbler.service
 
 # To follow the output:
 # journalctl -f -u bluos-scrobbler.service
