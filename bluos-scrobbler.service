@@ -9,8 +9,8 @@ Environment=PYTHONUNBUFFERED=1
 User=pi
 Group=pi
 ExecStart=/usr/bin/python3 /home/pi/bluos-scrobbler/bluos-scrobbler.py
-StandardOutput=append:/home/pi/bluos-scrobbler/out.log
-StandardError=append:/home/pi/bluos-scrobbler/err.log
+StandardOutput=journal+console
+StandardError=journal+console
 
 [Install]
 WantedBy=multi-user.target
