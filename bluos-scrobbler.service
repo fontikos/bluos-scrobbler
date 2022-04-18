@@ -1,0 +1,11 @@
+[Unit]
+Description=BluOS Scrobbler
+After=multi-user.target
+
+[Service]
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /home/pi/bluos-Scrobbler.py >> /home/pi/bluos-Scrobbler.log 2>&1
+
+[Install]
+WantedBy=multi-user.target

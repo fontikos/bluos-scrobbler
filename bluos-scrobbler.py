@@ -1,5 +1,5 @@
 # BluOS Scrobbler
-# BlueOS API: https://bluos.net/wp-content/uploads/2020/06/Custom-Integration-API-v1.0.pdf
+# BluOS API: https://bluos.net/wp-content/uploads/2020/06/Custom-Integration-API-v1.0.pdf
 
 import requests
 import xml.etree.cElementTree as et
