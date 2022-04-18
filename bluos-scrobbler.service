@@ -5,7 +5,11 @@ After=multi-user.target
 [Service]
 Type=simple
 Restart=always
-ExecStart=/usr/bin/python3 /home/pi/bluos-Scrobbler.py >> /home/pi/bluos-Scrobbler.log 2>&1
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/usr/bin/python3 /home/pi/bluos-scrobbler/bluos-scrobbler.py
+StandardOutput=append:/home/pi/bluos-scrobbler/out.log
+StandardError=append:/home/pi/bluos-scrobbler/err.log
 
 [Install]
 WantedBy=multi-user.target
+
