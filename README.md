@@ -2,13 +2,13 @@
 
 A simple Python-based Last.fm scrobbler for BluOS.
 
-## Configuration
+## Initial Configuration
 
 Fill in `myconfig-example.py` and rename it to `myconfig.py`.
 
 ### Last.fm Variables
 
-For the `LASTFM_*` variables, detailed istructions are available in the [Last.fm API documentation](https://www.last.fm/api).
+For the `LASTFM_*` variables, detailed instructions are available in the [Last.fm API documentation](https://www.last.fm/api).
 
 In summary, you first need to apply for an API key [here](https://www.last.fm/api/account/create). Providing only an application name in the form is sufficient. You will then receive an API key and secret that you need to copy in `LASTFM_API` and `LASTFM_SECRET` respectively.
 
@@ -39,7 +39,7 @@ The script can be executed as follows:
 
 `$ python3 ./bluos-scrobbler.py`
 
-Note that in case of songs with multiple artists that have an artist tag of the form `artist1, artist2, artist3`, the script will scrobble it with only the first artist. Similarly the script will remove any "(Remastered)" information from the track and album title.
+Note that in case of songs with multiple artists that have an artist tag of the form `artist1, artist2, artist3`, the script will scrobble it with only the first artist. Similarly, the script will remove any "(Remastered)" information from the track and album title.
 
 
 ## Installation as a Service
