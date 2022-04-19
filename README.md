@@ -10,7 +10,7 @@ Fill in `myconfig-example.py` and rename it to `myconfig.py`.
 
 For the `LASTFM_*` variables, detailed istructions are available in the [Last.fm API documentation](https://www.last.fm/api).
 
-In summary, you first need to apply for an API key [here](https://www.last.fm/api/account/create). Provide only an application name in the form is sufficient. You will then receive an API key and secret that you need to copy in `LASTFM_API` and `LASTFM_SECRET` respectively.
+In summary, you first need to apply for an API key [here](https://www.last.fm/api/account/create). Providing only an application name in the form is sufficient. You will then receive an API key and secret that you need to copy in `LASTFM_API` and `LASTFM_SECRET` respectively.
 
 The next step is to obtain a session key. For that you will first need to obtain an authorization token. You can follow the instructions [here](https://github.com/huberf/lastfm-scrobbler). In short, go to http://www.last.fm/api/auth?api_key={YOUR_API_KEY}&cb=http://localhost:5555 after you make sure nothing is running at port 5555. Click "Allow Access" and copy the token from the resulting URL (e.g. http://localhost:5555/?token={TOKEN_YOU_WANT}). Copy the token in `LASTFM_TOKEN`.
 
@@ -38,6 +38,8 @@ The variable `SCROBBLE_SERVICES` defines the services that will be scrobbled. On
 The script can be executed as follows:
 
 `python3 ./bluos-scrobbler.py`
+
+Note that in case of songs with multiple artists that have an artist tag of the form `artist1, artist2, artist3`, the script will scrobble it with only the first artist. Similarly the script will remove any "(Remastered)" information from the track and album title.
 
 
 ## Installation as a Service
