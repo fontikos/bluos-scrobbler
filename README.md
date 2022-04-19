@@ -37,7 +37,7 @@ The variable `SCROBBLE_SERVICES` defines the services that will be scrobbled. On
 
 The script can be executed as follows:
 
-`python3 ./bluos-scrobbler.py`
+`$ python3 ./bluos-scrobbler.py`
 
 Note that in case of songs with multiple artists that have an artist tag of the form `artist1, artist2, artist3`, the script will scrobble it with only the first artist. Similarly the script will remove any "(Remastered)" information from the track and album title.
 
@@ -46,7 +46,7 @@ Note that in case of songs with multiple artists that have an artist tag of the 
 
 In a Linux environment, such as a Raspberry Pi, you can install it to run as a service by executing:
 
-`./install-as-service.sh`
+`$ ./install-as-service.sh`
 
 ## Acknowledgements
 
