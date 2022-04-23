@@ -24,7 +24,7 @@ This will print an XML response which will contain the session key within the `<
 
 Update the `BLUOS_IP` with the IP address of your BluOS device. `BLUOS_PORT` is the port number of the service.
 
-You can read more at the [BluOS API](https://bluos.net/wp-content/uploads/2020/06/Custom-Integration-API-v1.0.pdf).
+You can read more at the [BluOS API](https://bluos.net/wp-content/uploads/2021/03/Custom-Integration-API-v1.0_March-2021.pdf).
 
 ### Other Configuration Variables
 
