@@ -30,6 +30,7 @@ song['timeout'] = 300
 song['scrobble'] = False
 oldnp = 0
 while True:
+	# requests.exceptions.ConnectionError
 	if song['etag'] == '':
 		r = requests.get(BLUOS_STATUS_URL)
 	else:
