@@ -48,6 +48,14 @@ In a Linux environment, such as a Raspberry Pi, you can install it to run as a s
 
 `$ ./install-as-service.sh`
 
+You can restart the service:
+
+`$ ./restart.sh`
+
+You can follow the output in the system journal as follows:
+
+`$ ./log.sh`
+
 ## Acknowledgements
 
 The Last.fm library, `lastfm.py` is based on the [lastfm-scrobbler](https://github.com/huberf/lastfm-scrobbler).
