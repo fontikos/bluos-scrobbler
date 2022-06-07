@@ -30,21 +30,24 @@ song['timeout'] = 300
 song['scrobble'] = False
 oldnp = 0
 while True:
-	if song['etag'] == '':
-		r = requests.get(BLUOS_STATUS_URL)
-	else:
-		r = requests.get('%s?timeout=%d&etag=%s' % (BLUOS_STATUS_URL, song['timeout'], song['etag']))
-
+	try:
+		if song['etag'] == '':
+			r = requests.get(BLUOS_STATUS_URL)
+		else:
+			r = requests.get('%s?timeout=%d&etag=%s' % (BLUOS_STATUS_URL, song['timeout'], song['etag']))
+	except:
+		time.sleep(10)
+		continue
 	#print(r.text)
 	root=et.fromstring(r.text)
-	
+
 	try:
 		oldetag = song['etag']
 		song['etag'] = root.attrib['etag']
 		song['service'] = root.find('service').text
 		if song['service'] not in myconfig.SCROBBLE_SERVICES:
 			continue
-		
+
 		song['artist'] = root.find('artist').text
 		if ',' in song['artist']:
 			song['artist'] = song['artist'].split(',')[0]
